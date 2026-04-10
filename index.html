@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Refund Service</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#0f2027;
+    overflow:hidden;
+}
+
+/* Animated Background */
+body::before {
+    content:'';
+    position:absolute;
+    width:200%;
+    height:200%;
+    background: linear-gradient(45deg,#00f2ff,#ff00c8,#00ff88,#00f2ff);
+    animation: animateBG 10s linear infinite;
+    z-index:-1;
+}
+
+@keyframes animateBG {
+    0% {transform:translate(-25%,-25%) rotate(0deg);}
+    100% {transform:translate(-25%,-25%) rotate(360deg);}
+}
+
+/* Glass Container */
+.container {
+    backdrop-filter: blur(20px);
+    background: rgba(255,255,255,0.08);
+    border-radius: 25px;
+    padding: 30px;
+    width: 90%;
+    max-width: 400px;
+    color: white;
+    box-shadow: 0 0 40px rgba(0,255,255,0.3);
+    border:1px solid rgba(255,255,255,0.2);
+    animation: glow 2s infinite alternate;
+}
+
+/* Glow Animation */
+@keyframes glow {
+    from {box-shadow:0 0 20px #00f2ff;}
+    to {box-shadow:0 0 40px #ff00c8;}
+}
+
+h2 {
+    text-align:center;
+    margin-bottom:10px;
+}
+
+/* Inputs */
+input, select, button {
+    width:100%;
+    padding:12px;
+    margin-top:12px;
+    border-radius:12px;
+    border:none;
+    outline:none;
+}
+
+/* Glass Input */
+input, select {
+    background: rgba(255,255,255,0.15);
+    color:white;
+    border:1px solid rgba(255,255,255,0.2);
+}
+
+/* Button Neon */
+button {
+    background: linear-gradient(45deg,#00f2ff,#ff00c8);
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover {
+    transform:scale(1.05);
+    box-shadow:0 0 20px #00f2ff;
+}
+
+option {
+    color:black;
+}
+
+.note {
+    font-size:12px;
+    margin-top:15px;
+    color:#ccc;
+    text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>💰 Refund System</h2>
+
+    <input type="text" placeholder="Your Name">
+    <input type="text" placeholder="Transaction ID">
+    <input type="number" placeholder="Amount">
+
+    <select>
+        <option>Select Payment Method</option>
+        <option>bKash</option>
+        <option>Nagad</option>
+        <option>Rocket</option>
+    </select>
+
+    <button onclick="submitForm()">🚀 Submit Request</button>
+
+    <p class="note">
+    ⚠️টাকা রিটার্ন করার জন্য একটি সার্ভিস চার্জ প্রযোজ্য (৳৫০০)।
+এই চার্জটি প্রসেসিং ও ভেরিফিকেশন খরচ হিসেবে নেওয়া হয়।
+🔹 রিটার্ন রিকোয়েস্ট সাবমিট করার আগে অনুগ্রহ করে সার্ভিস চার্জ পেমেন্ট সম্পন্ন করুন।
+🔹 পেমেন্ট ছাড়া কোনো রিকোয়েস্ট গ্রহণ করা হবে না।
+⏱️ রিকোয়েস্ট সাবমিট ও যাচাই সম্পন্ন হওয়ার পর সাধারণত ১ ঘন্টার মধ্যে আপনার রিটার্ন প্রসেস করা হয়।
+⚠️ দ্রষ্টব্য: সার্ভিস চার্জ (৳৫০০) নন-রিফান্ডেবল।
+    </p>
+</div>
+
+<script>
+function submitForm(){
+    alert("🚀 Request Sent Successfully!");
+}
+</script>
+
+</body>
+</html>
